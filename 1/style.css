@@ -1,0 +1,72 @@
+body { 
+    margin : 0;
+}
+
+:root {
+    --borderwidth : 3px;
+    --borderpercent : 100%;
+}
+
+div.wrapper {
+    width : 100vw;
+    height : 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border : none;
+    padding : 10px 20px;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size : 1.2em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor : pointer;
+    overflow : hidden;
+}
+
+button::after {
+    content : '';
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 10px;
+    height : 10px;
+    border-color : black;
+    border-style : solid;
+    border-width : var(--borderwidth) 0px 0px var(--borderwidth) ;
+    transition : 0.5s;
+}
+
+button::before {
+    content : '';
+    position: absolute;
+    bottom : 0;
+    right : 0;
+    width : 10px;
+    height : 10px;
+    border-color : black;
+    border-style : solid;
+    border-width : 0px var(--borderwidth) var(--borderwidth) 0px;
+    transition : 0.5s;
+}
+
+button:hover::after  {
+     width : var(--borderpercent);
+     height : var(--borderpercent);
+     transition : 0.5s;
+}
+
+
+button:hover::before  {
+    width : var(--borderpercent);
+    height : var(--borderpercent);
+    transition : 0.5s;
+}
+
+button:active {
+    top : 1px;
+}
