@@ -1,0 +1,80 @@
+body {
+    margin : 0;
+}
+
+div.wrapper {
+    width : 100vw;
+    height : 100vh;
+    box-sizing: border-box;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-size : 1.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+    border : none;
+    outline : none;
+    padding : 10px 20px;
+    cursor : pointer;
+    color : black;
+    transition : 0.2s;
+    position : relative;
+    --offset : 0px;
+}
+
+button::before {
+    content : ' ';
+    border-width : 2px 0 0 2px ;
+    border-style : solid;
+    border-color : red;
+    position : absolute;
+    top : var(--offset);
+    left : var(--offset);
+    width : 10px;
+    height : 10px;
+    z-index : 2;
+    transition : 0.2s;
+}
+
+button::after {
+    content : ' ';
+    border-width : 0 2px 2px 0  ;
+    border-style : solid;
+    border-color : red;
+    position : absolute;
+    bottom : var(--offset);
+    right : var(--offset);
+    width : 10px;
+    height : 10px;
+    z-index : 2;
+    transition : 0.2s;
+}
+
+button:hover {
+    background : rgb(54, 54, 54);
+    color : white;
+    transition : 0.2s;
+}
+
+
+button:hover::before {
+    top : calc(100% - 10px);
+    left : 0;
+    transform: rotateZ(-90deg);
+    transition : 0.2s;
+}
+
+button:hover::after {
+    bottom : calc(100% - 10px);
+    right : 0;
+    transform: rotateZ(-90deg);
+    transition : 0.2s;
+}
+
+
+button:active {
+    background : rgb(128, 117, 117);
+}

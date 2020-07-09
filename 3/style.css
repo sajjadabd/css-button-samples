@@ -1,0 +1,59 @@
+body {
+    margin : 0;
+}
+
+div.wrapper {
+    width : 100vw;
+    height : 100vh;
+    display : flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    width : 15vw;
+    padding : 15px 30px;
+    font-size : 1.2em;
+    font-family : Verdana, Geneva, Tahoma, sans-serif;
+    outline : none;
+    border : none;
+    border-radius: 10px;
+    background : rgb(95, 67, 253);
+    color : white;
+    text-transform: uppercase;
+    cursor : pointer;
+    transition: 0.5s;
+    position : relative;
+    overflow : hidden;
+}
+
+
+button::after {
+    content : ' ';
+    width : 1vw;
+    height : 20vh;
+    border : 10px solid white;
+    background-color: white;
+    position: absolute;
+    top : -50%;
+    left : -5vw;
+    filter : blur(15px);
+    transform: rotate(15deg);
+    transition : 0.3s;
+}
+
+
+button:hover {
+    background : rgb(95, 21, 255);
+    transition: 0.5s;
+}
+
+button:hover::after {
+    left : 15vw;
+    transition : 0.3s;
+}
+
+button:active {
+    background: rgb(211, 190, 248);
+}
+
